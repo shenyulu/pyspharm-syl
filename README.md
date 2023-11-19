@@ -1,3 +1,43 @@
+# pyspharm-syl
+
+This is a derivative of pyspharm compiled with the help of intel oneAPI, built on pyspharm version 1.0.9.
+
+## Requires
+
+- python >= 3.8 < 3.12
+- Numpy >= 1.24.3
+- intel-fortran-rt
+
+## Platform Support
+
+- win_amd64: python 3.8, 3.9, 3.10, 3.11.  
+
+- linux_x86_64: python 3.8, 3.9, 3.10, 3.11. 
+
+
+> **As of November 2021**
+>
+> The default build system for `F2PY` has traditionally been through the enhanced `numpy.distutils` module. This module is based on `distutils` which will be removed in `Python 3.12.0` in **October 2023**; `setuptools` does not have support for Fortran or `F2PY` and it is unclear if it will be supported in the future. Alternative methods are thus increasingly more important.
+
+## Build Method
+
+Windows x86-64
+
+```
+python setup.py build config_fc --fcompiler=intelvem
+python setup.py bdist_wheel
+```
+
+Linux
+```
+python setup.py build config_fc --fcompiler=intelem
+python setup.py bdist_wheel
+```
+
+## Original description
+
+Source: https://github.com/jswhit/pyspharm
+
 Requires: Numpy (http://numeric.scipy.org),
 and a fortran compiler supported by numpy.f2py,
 

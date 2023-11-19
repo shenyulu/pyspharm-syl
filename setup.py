@@ -49,13 +49,14 @@ ext = Extension(name          = '_spherepack',
 #    tarf.close()
 
 if __name__ == "__main__":
-    setup(name = 'pyspharm',
+    setup(name = 'pyspharm-syl',
           version           = "1.0.9",
           description       = "Python Spherical Harmonic Transform Module",
-          author            = "Jeff Whitaker",
-          author_email      = "jeffrey.s.whitaker@noaa.gov",
-          url               = "http://code.google.com/p/pyspharm",
+          author            = "Shenyulu",
+          author_email      = "shenyulu2020@gmail.com",
+          url               = "https://github.com/shenyulu/pyspharm-syl",
           ext_modules       = [ext],
 	  packages          = ['spharm'],
-	  package_dir       = {'spharm':'Lib'}
+	  package_dir       = {'spharm':'Lib'},
+      install_requires=['numpy >= 1.24.3', 'intel-fortran-rt']
           )
