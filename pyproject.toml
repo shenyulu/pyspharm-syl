@@ -1,3 +1,41 @@
 [build-system]
-requires = ["setuptools>=30.3.0", "wheel", "numpy"]
-build-backend = "setuptools.build_meta"
+build-backend = 'mesonpy'
+requires = ['meson-python', 'meson >= 1.1.0', 'numpy']
+
+[project]
+name = "pyspharm-syl"
+
+license = {file = "LICENSE.spherepack"}
+
+description = "Python Spherical Harmonic Transform Module"
+authors = [
+    {name = "shenyulu"},
+]
+requires-python = ">=3.9"
+readme = "README.md"
+classifiers = [
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3 :: Only',
+    'Topic :: Scientific/Engineering',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX',
+    'Operating System :: Unix',
+    'Operating System :: MacOS',
+]
+version = "1.2.0"
+dependencies = [
+    'numpy >= 1.24.3',
+    'intel-fortran-rt',
+]
+
+[project.urls]
+homepage = "https://github.com/shenyulu/pyspharm-syl"
+documentation = "https://github.com/shenyulu/pyspharm-syl"
+source = "https://github.com/shenyulu/pyspharm-syl"
+download = "https://pypi.org/project/pyspharm-syl/#files"
+tracker = "https://github.com/shenyulu/pyspharm-syl/issues"

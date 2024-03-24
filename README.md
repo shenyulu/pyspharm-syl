@@ -4,37 +4,98 @@ This is a derivative of pyspharm compiled with the help of intel oneAPI, built o
 
 ## Requires
 
-- python >= 3.8 < 3.12
+- python >= 3.9
 - Numpy >= 1.24.3
 - intel-fortran-rt
 
 ## Platform Support
 
-- win_amd64: python 3.8, 3.9, 3.10, 3.11.  
+- win_amd64: python 3.9, 3.10, 3.11, 3.12.  
+- linux_x86_64: python 3.9, 3.10, 3.11, 3.12. 
 
-- linux_x86_64: python 3.8, 3.9, 3.10, 3.11. 
-
-
-> **As of November 2021**
->
-> The default build system for `F2PY` has traditionally been through the enhanced `numpy.distutils` module. This module is based on `distutils` which will be removed in `Python 3.12.0` in **October 2023**; `setuptools` does not have support for Fortran or `F2PY` and it is unclear if it will be supported in the future. Alternative methods are thus increasingly more important.
 
 ## Build Method
 
-Windows x86-64
+### Windows
+
+Install [Intel® HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html) and then open the `Intel oneAPI command prompt for Intel 64 for Visual Studio 2022` in the start menu.
+
+![](https://github.com/shenyulu/pyspharm-syl/blob/main/fig/readme1.png)
+
+Open [Anaconda](https://www.anaconda.com/download) or python in this terminal.
+
+```powershell
+# open python env
+python
+
+# or open Anaconda
+%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'C:\Users\[USER NAME]\anaconda3\shell\condabin\conda-hook.ps1' ; conda activate 'C:\Users\[USER NAME]\anaconda3' "
+```
+
+Install the dependencies
 
 ```
-python setup.py build config_fc --fcompiler=intelvem
-python setup.py bdist_wheel
+pip install -r build_requirement_windows.txt
 ```
 
-Linux
-```
-python setup.py build config_fc --fcompiler=intelem
-python setup.py bdist_wheel
+Create the wheel binary package
+
+```powershell
+.\build_wheel_windows.ps1
 ```
 
-## Original description
+### Linux
+
+Install [Intel® HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html) and then activate Intel oneAPI environment
+
+```bash
+source /opt/intel/oneapi/setvars.sh
+```
+
+Open [Anaconda](https://www.anaconda.com/download) or python in this terminal
+
+```
+# open python env
+python
+
+# or open Anaconda
+__conda_setup="$('/home/[USER NAME]/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/[USER NAME]/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/[USER NAME]/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/[USER NAME]/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+```
+
+Install the dependencies
+
+```
+pip install -r build_requirement_linux.txt
+```
+
+Tips: For build manylinux wheel, please use `build_requirement_manylinux.txt`
+
+```
+pip install -r build_requirement_manylinux.txt
+```
+
+- Required in manylinux image environment
+
+Create the wheel binary package
+
+```bash
+.\build_wheel_linux.sh
+
+# for manylinux, please run as follows:
+.\build_wheel_manylinux.sh
+```
+
+## Pyspharm description
 
 Source: https://github.com/jswhit/pyspharm
 
@@ -71,3 +132,14 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 
 -- Jeff Whitaker <Jeffrey.S.Whitaker@noaa.gov>
+
+## Changelog
+
+#### Version 1.2.0 (2024.3.25)
+- Change build system from `numpy.distutils` to [meson-python]([meson-python 0.16.0.dev0](https://meson-python.readthedocs.io/en/latest/)).
+- Change the default C compiler to `icx`, and the default Fortran compiler to `ifx`.
+
+#### Version 1.0.9 (2023.11.19)
+
+- Support direct installation of wheel without compilation for both the Windows and Linux platform.
+
