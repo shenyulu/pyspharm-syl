@@ -2,6 +2,14 @@
 
 This is a derivative of pyspharm compiled with the help of intel oneAPI, built on pyspharm version 1.0.9.
 
+## How to install?
+
+The `pyspharm-syl` package can be installed using Python package installer [pip](https://pip.pypa.io/en/stable/getting-started/).
+
+```
+pip install pyspharm-syl
+```
+
 ## Requires
 
 - python >= 3.9
