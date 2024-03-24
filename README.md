@@ -20,7 +20,7 @@ This is a derivative of pyspharm compiled with the help of intel oneAPI, built o
 
 Install [Intel® HPC Toolkit](https://www.intel.com/content/www/us/en/developer/tools/oneapi/hpc-toolkit-download.html) and then open the `Intel oneAPI command prompt for Intel 64 for Visual Studio 2022` in the start menu.
 
-![](https://github.com/shenyulu/pyspharm-syl/blob/main/fig/readme1.png)
+![](https://github.com/shenyulu/pyspharm-syl/blob/master/fig/readme1.png)
 
 Open [Anaconda](https://www.anaconda.com/download) or python in this terminal.
 
