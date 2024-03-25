@@ -147,7 +147,7 @@ PERFORMANCE OF THIS SOFTWARE.
 ## Changelog
 
 #### Version 1.2.0 (2024.3.25)
-- Change build system from `numpy.distutils` to [meson-python]([meson-python 0.16.0.dev0](https://meson-python.readthedocs.io/en/latest/)).
+- Change build system from `numpy.distutils` to [meson-python](https://meson-python.readthedocs.io/en/latest/).
 - Change the default C compiler to `icx`, and the default Fortran compiler to `ifx`.
 
 #### Version 1.0.9 (2023.11.19)
