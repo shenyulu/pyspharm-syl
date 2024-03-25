@@ -2,6 +2,8 @@
 
 This is a derivative of pyspharm compiled with the help of intel oneAPI, built on pyspharm version 1.0.9.
 
+For more information about the fortran kernel backgroud, please refer to the **[NCAR-Classic-Libraries-for-Geophysics](https://github.com/NCAR/NCAR-Classic-Libraries-for-Geophysics)**.
+
 ## How to install?
 
 The `pyspharm-syl` package can be installed using Python package installer [pip](https://pip.pypa.io/en/stable/getting-started/).
@@ -15,6 +17,7 @@ pip install pyspharm-syl
 - python >= 3.9
 - Numpy >= 1.24.3 (for python 3.12, numpy >= 1.26.0)
 - intel-fortran-rt
+- dpcpp-cpp-rt
 
 ## Platform Support
 
