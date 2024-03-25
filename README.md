@@ -13,7 +13,7 @@ pip install pyspharm-syl
 ## Requires
 
 - python >= 3.9
-- Numpy >= 1.24.3
+- Numpy >= 1.24.3 (for python 3.12, numpy >= 1.26.0)
 - intel-fortran-rt
 
 ## Platform Support
