@@ -1,5 +1,5 @@
 project('_spherepack', 'c',
-  version : '1.2.0',
+  version : '1.2.1',
   license: 'BSD-3',
   meson_version: '>=1.1.0',
   default_options : ['warning_level=2'],

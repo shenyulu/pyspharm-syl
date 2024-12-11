@@ -21,8 +21,8 @@ pip install pyspharm-syl
 
 ## Platform Support
 
-- win_amd64: python 3.9, 3.10, 3.11, 3.12.  
-- linux_x86_64: python 3.9, 3.10, 3.11, 3.12. 
+- win_amd64: python 3.9, 3.10, 3.11, 3.12, 3.13.  
+- linux_x86_64: python 3.9, 3.10, 3.11, 3.12, 3.13. 
 
 
 ## Build Method
@@ -145,6 +145,9 @@ PERFORMANCE OF THIS SOFTWARE.
 -- Jeff Whitaker <Jeffrey.S.Whitaker@noaa.gov>
 
 ## Changelog
+
+#### Version 1.2.1 (2024.12.12)
+- Support Python 3.13, and build manylinux and windows wheel with `intel-oneapi-hpc-toolkit-2025.0.0.825`.
 
 #### Version 1.2.0 (2024.3.25)
 - Change build system from `numpy.distutils` to [meson-python](https://meson-python.readthedocs.io/en/latest/).
